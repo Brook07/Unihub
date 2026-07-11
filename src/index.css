@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Inter", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  /* Primary Brand colors based on reference dashboard */
+  --color-brand-primary: #2563eb;
+  --color-brand-hover: #1d4ed8;
+  --color-brand-light: #dbeafe;
+  --color-brand-dark: #1e3a8a;
+
+  /* Backgrounds */
+  --color-bg-primary: #f8fafc;
+  --color-bg-surface: #ffffff;
+  --color-bg-sidebar: #f1f5f9;
+  --color-bg-card: #ffffff;
+  --color-bg-elevated: #ffffff;
+
+  /* Text colors */
+  --color-text-primary: #0f172a;
+  --color-text-secondary: #64748b;
+  --color-text-muted: #94a3b8;
+
+  /* Borders & Dividers */
+  --color-border-custom: #e2e8f0;
+  --color-divider-custom: #f1f5f9;
+
+  /* Semantic colors */
+  --color-semantic-success: #22C55E;
+  --color-semantic-success-bg: #DCFCE7;
+  --color-semantic-warning: #F59E0B;
+  --color-semantic-warning-bg: #FEF3C7;
+  --color-semantic-danger: #EF4444;
+  --color-semantic-danger-bg: #FEE2E2;
+  --color-semantic-info: #3B82F6;
+  --color-semantic-info-bg: #DBEAFE;
+
+  /* Customized radius */
+  --radius-custom-sm: 6px;
+  --radius-custom-md: 10px;
+  --radius-custom-lg: 14px;
+  --radius-custom-xl: 20px;
+}
+
+/* Base custom classes to support the academic look and transitions */
+html, body {
+  font-family: var(--font-sans);
+  background-color: var(--color-bg-primary);
+  color: var(--color-text-primary);
+  transition: background-color 0.2s ease, color 0.2s ease;
+  min-height: 100vh;
+  margin: 0;
+}
+
+/* Dark Mode Overrides for strict dark mode compatibility and high contrast */
+html.dark {
+  --color-brand-primary: #3b82f6; /* Brighter, readable neon-blue for dark mode background */
+  --color-brand-hover: #60a5fa;
+  --color-brand-light: #172554;
+  --color-brand-dark: #1e40af;
+
+  --color-bg-primary: #090d16;
+  --color-bg-surface: #111827;
+  --color-bg-sidebar: #0f172a;
+  --color-bg-card: #111827;
+  --color-bg-elevated: #1e293b;
+
+  --color-text-primary: #f8fafc;
+  --color-text-secondary: #cbd5e1;
+  --color-text-muted: #94a3b8;
+
+  --color-border-custom: #1f2937;
+  --color-divider-custom: #1e293b;
+
+  --color-semantic-success-bg: #064e3b;
+  --color-semantic-warning-bg: #78350f;
+  --color-semantic-danger-bg: #7f1d1d;
+  --color-semantic-info-bg: #1e3a8a;
+}
+
+html.dark body {
+  background-color: var(--color-bg-primary);
+  color: var(--color-text-primary);
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.2);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(148, 163, 184, 0.4);
+}
+
+/* Premium Shadows from Spec */
+.shadow-custom-card {
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.05);
+}
+
+.shadow-custom-hover {
+  box-shadow: 0 8px 24px rgba(37, 99, 235, 0.10);
+}
+
+.shadow-custom-modal {
+  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.12);
+}
+
+/* Lift on hover with 200ms ease */
+.hover-lift {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(37, 99, 235, 0.10);
+}
+
+/* Fade-in Animation utility */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 200ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+

@@ -1,0 +1,6 @@
+{
+  "name": "UniHub Academic Platform",
+  "description": "A comprehensive, modern full-stack academic hub containing course progress, assignment Kanban boards, announcement boards, calendar, resources library, live messages, and study communities with offline storage persistence.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
